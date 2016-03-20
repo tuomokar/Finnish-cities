@@ -16,3 +16,6 @@
 
 # Ignore byebug history
 .byebug_history
+
+# ignores default test files
+/test/
