@@ -2,3 +2,9 @@ fi:
   Finnish_municipalities: Suomen kunnat
   new_region: uusi maakunta
   Regions: Maakunnat
+  New_Region: Uusi maakunta
+  Name: Nimi
+  Area: Pinta-ala
+  Description: Kuvaus
+  Population: Väkimäärä
+  Editing_Region: Editoidaan maakuntaa
