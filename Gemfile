@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+# test coverage
+gem 'coveralls', require: false
+
 # used for translating model attributes
 gem 'globalize', '~> 5.0.0'
 
