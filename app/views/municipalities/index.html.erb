@@ -2,36 +2,10 @@
 
 <h1>Listing Municipalities</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Year</th>
-      <th>Description</th>
-      <th>Population</th>
-      <th>Link</th>
-      <th>Region</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<ul>
+  <% @municipalities.each do |municipality| %>
+    <li><%= link_to municipality.name, municipality %></li>
+  <% end %>
+</ul><br>
 
-  <tbody>
-    <% @municipalities.each do |municipality| %>
-      <tr>
-        <td><%= municipality.name %></td>
-        <td><%= municipality.year %></td>
-        <td><%= municipality.description %></td>
-        <td><%= municipality.population %></td>
-        <td><%= municipality.link %></td>
-        <td><%= municipality.region_id %></td>
-        <td><%= link_to 'Show', municipality %></td>
-        <td><%= link_to 'Edit', edit_municipality_path(municipality) %></td>
-        <td><%= link_to 'Destroy', municipality, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Municipality', new_municipality_path %>
+<%= link_to (t :'New_Municipality'), new_municipality_path %>

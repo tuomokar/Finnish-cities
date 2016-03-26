@@ -1,34 +1,34 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong><%= t :Name %>:</strong>
   <%= @municipality.name %>
 </p>
 
 <p>
-  <strong>Year:</strong>
+  <strong><%= t :Year %>:</strong>
   <%= @municipality.year %>
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <strong><%= t :Description %>:</strong>
   <%= @municipality.description %>
 </p>
 
 <p>
-  <strong>Population:</strong>
+  <strong><%= t :Population %>:</strong>
   <%= @municipality.population %>
 </p>
 
 <p>
-  <strong>Link:</strong>
-  <%= @municipality.link %>
+  <strong><%= t :Link %>:</strong>
+  <a href=<%= @municipality.link %>><%= @municipality.link %></a>
 </p>
 
 <p>
-  <strong>Region:</strong>
+  <strong><%= t :Region %>:</strong>
   <%= @municipality.region_id %>
 </p>
 
-<%= link_to 'Edit', edit_municipality_path(@municipality) %> |
-<%= link_to 'Back', municipalities_path %>
+<%= link_to (t :Edit), edit_municipality_path(@municipality) %> |
+<%= link_to (t :Back), municipalities_path %>
