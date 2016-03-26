@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160326145907) do
+ActiveRecord::Schema.define(version: 20160326165742) do
 
   create_table "municipalities", force: :cascade do |t|
     t.string   "name"
@@ -23,6 +23,19 @@ ActiveRecord::Schema.define(version: 20160326145907) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  create_table "municipality_translations", force: :cascade do |t|
+    t.integer  "municipality_id", null: false
+    t.string   "locale",          null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "name"
+    t.text     "description"
+    t.string   "link"
+  end
+
+  add_index "municipality_translations", ["locale"], name: "index_municipality_translations_on_locale"
+  add_index "municipality_translations", ["municipality_id"], name: "index_municipality_translations_on_municipality_id"
 
   create_table "region_translations", force: :cascade do |t|
     t.integer  "region_id",   null: false
