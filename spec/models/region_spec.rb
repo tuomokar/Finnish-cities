@@ -1,27 +1,42 @@
 require 'rails_helper'
 
 RSpec.describe Region, type: :model do
-  it "has the name set correctly with locale being en" do
-    I18n.locale = :en
-    region = Region.new name:"Southwest Finland"
 
-    region.name.should == "Southwest Finland"
+  describe "name is set" do
+
+    it "correctly with locale being en" do
+      I18n.locale = :en
+      region = Region.new name:"Southwest Finland"
+
+      expect(region.name).to eq("Southwest Finland")
+    end
+
+    it "correctly with locale being fi" do
+      I18n.locale = :fi
+      region = Region.new name:"Varsinais-Suomi"
+
+      expect(region.name).to eq("Varsinais-Suomi")
+    end
+
+    it "as the English locale's name if no Finnish name is given" do
+      I18n.locale = :en
+      region = Region.new name:"Southwest Finland"
+
+      I18n.locale = :fi
+      puts region.name
+
+      expect(region.name).to eq("Southwest Finland")
+    end
+
+    it "as the Finnish locale's name if no English name is given" do
+      I18n.locale = :fi
+      region = Region.new name:"Kainuu"
+
+      I18n.locale = :en
+      puts region.name
+
+      expect(region.name).to eq("Kainuu")
+    end
   end
 
-  it "has the name set correctly with locale being fi" do
-    I18n.locale = :fi
-    region = Region.new name:"Varsinais-Suomi"
-
-    region.name.should == "Varsinais-Suomi"
-  end
-
-  it "if en name is given but no fi, the fi name is nil" do
-    I18n.locale = :en
-    region = Region.new name:"Southwest Finland"
-
-    I18n.locale = :fi
-    puts region.name
-
-    region.name.should == nil
-  end
 end
