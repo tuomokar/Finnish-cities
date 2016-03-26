@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @municipality.name %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @municipality.year %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @municipality.description %>
+</p>
+
+<p>
+  <strong>Population:</strong>
+  <%= @municipality.population %>
+</p>
+
+<p>
+  <strong>Link:</strong>
+  <%= @municipality.link %>
+</p>
+
+<p>
+  <strong>Region:</strong>
+  <%= @municipality.region_id %>
+</p>
+
+<%= link_to 'Edit', edit_municipality_path(@municipality) %> |
+<%= link_to 'Back', municipalities_path %>
