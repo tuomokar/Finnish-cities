@@ -25,5 +25,9 @@ module Finnishcities
 
     # loads locale files in nested directories
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
+
+    # uses the other locale's translations by default if they're not given in the other locale
+    config.i18n.fallbacks = true
+    Globalize.fallbacks = {:en => [:en, :fi], :fi => [:fi, :en]}
   end
 end
