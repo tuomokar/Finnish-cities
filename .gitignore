@@ -19,3 +19,6 @@
 
 # ignores default test files
 /test/
+
+#ignores coverage files
+/coverage/
