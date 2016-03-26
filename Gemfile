@@ -1,8 +1,5 @@
 source 'https://rubygems.org'
 
-# test coverage
-gem 'coveralls', require: false
-
 # used for translating model attributes
 gem 'globalize', '~> 5.0.0'
 
@@ -47,7 +44,7 @@ end
 group :test do
   gem 'factory_girl_rails'
   gem 'capybara'
-  gem 'simplecov', require: false
+  gem 'coveralls'
 end
 
 group :prodution do
