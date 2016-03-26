@@ -20,5 +20,10 @@
   <%= @region.description %>
 </p>
 
-<%= link_to 'Edit', edit_region_path(@region) %> |
-<%= link_to 'Back', regions_path %>
+<p>
+  <strong><%= t :Link%></strong>
+  <a href=<%= @region.link %>><%= @region.link %></a>
+</p>
+
+<%= link_to (t :Edit), edit_region_path(@region) %> |
+<%= link_to (t :Back), regions_path %>
