@@ -14,4 +14,10 @@ FactoryGirl.define do
     population 20000
     description "Pohjois-Karjala is the northern part of the area of Karjala"
   end
+
+  factory :municipality_en, class: Municipality do
+    I18n.locale = :en
+    name "Helsinki"
+    population 100000
+  end
 end
