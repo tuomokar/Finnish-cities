@@ -57,7 +57,7 @@ group :test do
   gem 'coveralls'
 end
 
-group :prodution do
+group :production do
   gem 'pg'
   gem 'rails_12factor'
 end
