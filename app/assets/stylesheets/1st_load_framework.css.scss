@@ -33,14 +33,33 @@ img {
   }
 // apply styles to HTML elements
 // to make views framework-neutral
+
 main {
-  @extend .container;
+
   background-color: #eee;
   padding-bottom: 80px;
-  width: 100%;
-  margin-top: 51px; // accommodate the navbar
+  margin-top: 80px; // accommodate the navbar
   }
 section {
   @extend .row;
   margin-top: 20px;
   }
+
+#central-area {
+  width: 70%;
+  background-color: #73E863;
+
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  
+  padding-bottom: 20px;
+  padding-left: 15px;
+  padding-top: 10px;
+}
+
+
+
+
+
+

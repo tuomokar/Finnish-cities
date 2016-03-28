@@ -9,12 +9,15 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
+
     <header>
       <%= render 'layouts/navigation' %>
     </header>
     <main role="main">
-       <%= render 'layouts/messages' %>
-       <%= yield %>
+      <%= render 'layouts/messages' %>
+      <div class="center-block" id="central-area">
+        <%= yield %>
+      </div>
     </main>
   </body>
 </html>
