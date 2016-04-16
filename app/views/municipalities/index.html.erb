@@ -8,4 +8,6 @@
   <% end %>
 </ul><br>
 
-<%= link_to (t :'New_Municipality'), new_municipality_path %>
+<% if can? :create, Municipality %>
+    <%= link_to (t :'New_Municipality'), new_municipality_path %>
+<% end %>

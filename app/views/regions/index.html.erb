@@ -8,4 +8,6 @@
   <% end %>
 </ul>
 
-<%= link_to (t :new_region), new_region_path %>
+<% if can? :create, Region %>
+    <%= link_to (t :new_region), new_region_path %>
+<% end %>

@@ -12,6 +12,11 @@ class ApplicationController < ActionController::Base
     User.find(session[:user_id])
   end
 
+  rescue_from CanCan::AccessDenied do
+    flash[:warning] = t :not_authorized
+    redirect_to regions_path
+  end
+
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
   end

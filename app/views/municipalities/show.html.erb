@@ -30,5 +30,7 @@
   <%= @municipality.region_id %>
 </p>
 
-<%= link_to (t :Edit), edit_municipality_path(@municipality) %> |
-<%= link_to (t :Back), municipalities_path %>
+<% if can? :create, Municipality %>
+    <%= link_to (t :Edit), edit_municipality_path(@municipality) %> |
+    <%= link_to (t :Back), municipalities_path %>
+<% end %>

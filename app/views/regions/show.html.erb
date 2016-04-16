@@ -25,5 +25,7 @@
   <a href=<%= @region.link %>><%= @region.link %></a>
 </p>
 
-<%= link_to (t :Edit), edit_region_path(@region) %> |
-<%= link_to (t :Back), regions_path %>
+<% if can? :create, Region %>
+    <%= link_to (t :Edit), edit_region_path(@region) %> |
+    <%= link_to (t :Back), regions_path %>
+<% end %>

@@ -1,5 +1,6 @@
 class MunicipalitiesController < ApplicationController
   before_action :set_municipality, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
   # GET /municipalities
   # GET /municipalities.json
