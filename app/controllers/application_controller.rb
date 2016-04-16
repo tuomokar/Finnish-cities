@@ -5,6 +5,13 @@ class ApplicationController < ActionController::Base
 
   before_action :set_locale
 
+  helper_method :current_user
+
+  def current_user
+    return nil unless session[:user_id]
+    User.find(session[:user_id])
+  end
+
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
   end

@@ -12,6 +12,11 @@ en:
   Users: Users
   Home: Home
   Change_language: Muuta kieltä
+  my_page: my page
+  signout: signout
+  signin: Sign in
+  signup: Sign up
+  log_in: log in
   found_errors:
         one: One error prevented saving
         other: "%{count} errors prevented saving"

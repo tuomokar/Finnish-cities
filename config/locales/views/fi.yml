@@ -11,6 +11,12 @@ fi:
   Users: Käyttäjät
   Home: Pääsivu
   Change_language: Change language
+  my_page: oma sivu
+  signout: kirjaudu ulos
+  signin: Kirjaudu
+  signup: Rekisteröidy
+  Sign_in: Kirjaudu
+  log_in: kirjaudu
   found_errors:
     one: Yksi virhe esti talletuksen
     other: "%{count} virhettä esti talletuksen"
