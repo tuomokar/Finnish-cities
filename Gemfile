@@ -29,6 +29,9 @@ gem 'bcrypt', '~> 3.1.7'
 # for nav bars
 gem 'tabulous'
 
+# for authorization
+gem 'cancancan', '~> 1.10'
+
 gem 'bootstrap-sass'
 
 # for easier error messages with locales
