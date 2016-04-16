@@ -17,6 +17,7 @@ en:
   signin: Sign in
   signup: Sign up
   log_in: log in
+  not_authorized: You don't have permission to that
   found_errors:
         one: One error prevented saving
         other: "%{count} errors prevented saving"

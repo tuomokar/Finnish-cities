@@ -17,7 +17,7 @@ fi:
   signup: Rekisteröidy
   Sign_in: Kirjaudu
   log_in: kirjaudu
-  not_authorized: sinulla ei ole lupaa tuohon
+  not_authorized: Sinulla ei ole lupaa tuohon
   found_errors:
     one: Yksi virhe esti talletuksen
     other: "%{count} virhettä esti talletuksen"

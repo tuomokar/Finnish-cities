@@ -26,5 +26,6 @@ FactoryGirl.define do
     username "user1"
     password "passwordA1"
     password_confirmation "passwordA1"
+    admin false
   end
 end
