@@ -12,13 +12,28 @@
         <ul class="nav navbar-nav">
           <%= link_to (t :Home), root_path, class: 'navbar-brand' %>
           <%= tabs %>
+          <% if current_user %>
+              <li role="presentation" class="dropdown">
+
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                  <%= current_user.username %> <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><%= link_to (t :my_page), current_user %></li>
+                  <li><%= link_to (t :signout), signout_path, method: :delete %></li>
+                </ul>
+              </li>
+          <% else %>
+              <li><%= link_to (t :signin), signin_path %></li>
+              <li><%= link_to (t :signup), signup_path %></li>
+          <% end %>
           <li role="presentation" class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
               <%= t :Change_language %> <span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
-              <li><%= link_to 'fi', url_for( locale: :en) %></li>
-              <li><%= link_to 'en', url_for( locale: :fi) %></li>
+              <li><%= link_to 'fi', url_for( locale: :fi) %></li>
+              <li><%= link_to 'en', url_for( locale: :en) %></li>
             </ul>
           </li>
         </ul>
@@ -27,17 +42,3 @@
 
   </div>
 </nav>
-
-
-
-<div class="navbar-collapse collapse">
-  <ul class="nav navbar-nav navbar-left">
-    <li><a href="#">Left</a></li>
-    <li><a href="#about">Left</a></li>
-  </ul>
-  <ul class="nav navbar-nav pull-right">
-    <li><a href="#about">Right</a></li>
-    <li><a href="#contact">Right</a></li>
-  </ul>
-</div>
-
