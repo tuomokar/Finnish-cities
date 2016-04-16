@@ -9,6 +9,7 @@ fi:
   Population: Väkimäärä
   Link: Nettisivu
   Users: Käyttäjät
+  Home: Pääsivu
   found_errors:
     one: Yksi virhe esti talletuksen
     other: "%{count} virhettä esti talletuksen"

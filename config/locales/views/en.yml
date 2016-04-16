@@ -10,6 +10,7 @@ en:
   Population: Population
   Link: Website
   Users: Users
+  Home: Home
   found_errors:
         one: One error prevented saving
         other: "%{count} errors prevented saving"
