@@ -1,0 +1,17 @@
+fi:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            username:
+              not_unique: jo käytössä
+              username_too_short: tulee olla vähintään 3 merkkiä pitkä
+            password:
+              password_too_short: '^salasanan tulee olla vähintään 6 merkkiä pitkä'
+              one_capital_and_letter: '^salasanan tulee sisältää vähintään yksi iso kirjain ja yksi numero'
+    attributes:
+      user:
+        username: käyttäjänimi
+        password: salasana
+        password_confirmation: salasanan varmistus

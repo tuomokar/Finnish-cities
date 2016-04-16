@@ -1,0 +1,5 @@
+en:
+  username: username
+  password: password
+  password_confirmation: password confirmation
+  new_user: new user

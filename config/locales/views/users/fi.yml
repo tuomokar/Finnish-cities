@@ -1,0 +1,7 @@
+fi:
+  username: käyttäjänimi
+  password: salasana
+  password_confirmation: salasanan varmistus
+  new_user: uusi käyttäjä
+  changing_user_information: muutetaan käyttäjän tietoja
+  New_user: Uusi käyttäjä

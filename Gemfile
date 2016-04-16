@@ -31,6 +31,9 @@ gem 'tabulous'
 
 gem 'bootstrap-sass'
 
+# for easier error messages with locales
+gem 'dynamic_form'
+
 group :development, :test do
   gem 'byebug'
   gem 'sqlite3'

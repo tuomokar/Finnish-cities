@@ -2,9 +2,14 @@ en:
   Back: Back
   Show: Show
   Edit: Edit
+  Destroy: Destroy
   Name: Name
   name: name
   Finnish_municipalities: Finnish municipalities
   Description: Description
   Population: Population
   Link: Website
+  Users: Users
+  found_errors:
+        one: One error prevented saving
+        other: "%{count} errors prevented saving"

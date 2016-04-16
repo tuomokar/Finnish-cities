@@ -1,0 +1,14 @@
+en:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            username:
+              not_blank: can't be blank
+              not_unique: already taken
+              username_too_short: needs to be at least 3 characters long
+            password:
+              not_blank: can't be blank
+              password_too_short: needs to be at least 6 characters long
+              one_capital_and_letter: needs to have at least one capital letter and one digit

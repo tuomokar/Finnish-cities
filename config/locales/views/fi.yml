@@ -2,8 +2,18 @@ fi:
   Back: Takaisin
   Show: Näytä
   Edit: Muuta
+  Destroy: poista
   Name: Nimi
   Finnish_municipalities: Suomen kunnat
   Description: Kuvaus
   Population: Väkimäärä
   Link: Nettisivu
+  Users: Käyttäjät
+  found_errors:
+    one: Yksi virhe esti talletuksen
+    other: "%{count} virhettä esti talletuksen"
+  activerecord:
+    errors:
+      messages:
+        confirmation: on eri kuin salasana
+        blank: ei saa olla tyhjä
