@@ -3,7 +3,7 @@ Tabulous.setup do
   tabs do
 
     regions_tab do
-      text          { 'Regions' }
+      text          { t :Regions }
       link_path     { root_path }
       visible_when  { true }
       enabled_when  { true }
@@ -11,11 +11,19 @@ Tabulous.setup do
     end
 
     municipalities_tab do
-      text          { 'Municipalities' }
+      text          { t :Municipalities }
       link_path     { municipalities_path }
       visible_when  { true }
       enabled_when  { true }
       active_when   { in_action('any').of_controller('municipalities') }
+    end
+
+    users_tab do
+      text          { t :Users }
+      link_path     { users_path }
+      visible_when  { true }
+      enabled_when  { true }
+      active_when   { in_action('any').of_controller('users') }
     end
 
   end
@@ -25,8 +33,7 @@ Tabulous.setup do
     # which class to use to generate HTML
     # :default, :html5, :bootstrap, :bootstrap_pill or :bootstrap_navbar
     # or create your own renderer class and reference it here
-    renderer :bootstrap_navbar
-
+    # renderer :default
 
     # whether to allow the active tab to be clicked
     # defaults to true
