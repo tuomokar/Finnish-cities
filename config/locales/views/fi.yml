@@ -10,6 +10,7 @@ fi:
   Link: Nettisivu
   Users: Käyttäjät
   Home: Pääsivu
+  Change_language: Change language
   found_errors:
     one: Yksi virhe esti talletuksen
     other: "%{count} virhettä esti talletuksen"
