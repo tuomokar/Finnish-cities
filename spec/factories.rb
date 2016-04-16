@@ -20,4 +20,11 @@ FactoryGirl.define do
     name "Helsinki"
     population 100000
   end
+
+  factory :user, class: User do
+    I18n.locale =:en
+    username "user1"
+    password "passwordA1"
+    password_confirmation "passwordA1"
+  end
 end
