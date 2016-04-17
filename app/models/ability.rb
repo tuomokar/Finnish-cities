@@ -9,10 +9,13 @@ class Ability
     else
       can :read, User, :id => user.id
       can :create, :User
-      can :new, User, :id => user.id
+      can :new, User
       can :edit, User, :id => user.id
-      can :read, Region
-      can :read, Municipality
+
+      can [:create, :new], User
+
+
+      can :read, [Region, Municipality]
     end
     # Define abilities for the passed in user here. For example:
     #
