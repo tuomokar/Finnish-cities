@@ -11,6 +11,7 @@ class Ability
       can :create, :User
       can :new, User
       can :edit, User, :id => user.id
+      can :update, User, :id => user.id
 
       can [:create, :new], User
 
