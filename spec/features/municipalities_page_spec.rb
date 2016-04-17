@@ -2,13 +2,15 @@ require 'rails_helper'
 
 describe "Municipalities page" do
   describe "in English" do
+
+    let(:municipalities){["Helsinki", "Hämeenlinna", "Kuhmo"]}
+
     it "shows the 'Municipalities' text" do
       visit municipalities_path
       expect(page).to have_content("Municipalities")
     end
 
     describe "having existing regions" do
-      let(:municipalities){["Helsinki", "Hämeenlinna", "Kuhmo"]}
 
       it "lists each municipalities' name" do
         municipalities.each do |municipality_name|
@@ -38,13 +40,15 @@ describe "Municipalities page" do
   end
 
   describe "in Finnish" do
+
+    let(:municipalities){["Helsinki", "Hämeenlinna", "Kuhmo"]}
+
     it "shows the 'Kunnat' text" do
       visit municipalities_path(:fi)
       expect(page).to have_content("Kunnat")
     end
 
     describe "having existing municipalities" do
-      let(:municipalities){["Helsinki", "Hämeenlinna", "Kuhmo"]}
 
       it "lists each municipalities' name" do
         municipalities.each do |municipality_name|
