@@ -37,6 +37,9 @@ gem 'bootstrap-sass'
 # for easier error messages with locales
 gem 'dynamic_form'
 
+# for multi table inheritance
+gem 'active_record-acts_as'
+
 group :development, :test do
   gem 'byebug'
   gem 'sqlite3'
