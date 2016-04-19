@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160415123216) do
+ActiveRecord::Schema.define(version: 20160419180750) do
 
   create_table "municipalities", force: :cascade do |t|
     t.string   "name"
@@ -36,6 +36,30 @@ ActiveRecord::Schema.define(version: 20160415123216) do
 
   add_index "municipality_translations", ["locale"], name: "index_municipality_translations_on_locale"
   add_index "municipality_translations", ["municipality_id"], name: "index_municipality_translations_on_municipality_id"
+
+  create_table "place_translations", force: :cascade do |t|
+    t.integer  "place_id",    null: false
+    t.string   "locale",      null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "name"
+    t.text     "description"
+    t.string   "link"
+  end
+
+  add_index "place_translations", ["locale"], name: "index_place_translations_on_locale"
+  add_index "place_translations", ["place_id"], name: "index_place_translations_on_place_id"
+
+  create_table "places", force: :cascade do |t|
+    t.integer  "actable_id"
+    t.string   "actable_type"
+    t.string   "name"
+    t.string   "link"
+    t.text     "description"
+    t.integer  "municipality_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
 
   create_table "region_translations", force: :cascade do |t|
     t.integer  "region_id",   null: false
