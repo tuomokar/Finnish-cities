@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
 
   rescue_from CanCan::AccessDenied do
     flash[:warning] = t :not_authorized
-    redirect_to regions_path
+    redirect_to root_path
   end
 
   def set_locale
