@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   end
 
   # root with locale
-  get '/:locale' => 'regions#index'
+  get '/:locale' => 'home#index'
 
-  root 'regions#index'
+  root 'home#index'
 end

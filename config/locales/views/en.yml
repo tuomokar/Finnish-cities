@@ -21,3 +21,4 @@ en:
   found_errors:
         one: One error prevented saving
         other: "%{count} errors prevented saving"
+  welcome: Welcome!

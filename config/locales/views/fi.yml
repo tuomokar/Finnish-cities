@@ -26,3 +26,4 @@ fi:
       messages:
         confirmation: on eri kuin salasana
         blank: ei saa olla tyhjä
+  welcome: Tervetuloa!

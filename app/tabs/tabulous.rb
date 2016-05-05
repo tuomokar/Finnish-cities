@@ -2,9 +2,18 @@ Tabulous.setup do
 
   tabs do
 
+   # <%= link_to (t :Home), root_path, class: 'navbar-brand' %>
+    home_tab do
+      text          { t :Home }
+      link_path     { root_path }
+      visible_when  { true }
+      enabled_when  { true }
+      active_when   { in_action('any').of_controller('home') }
+    end
+
     regions_tab do
       text          { t :Regions }
-      link_path     { root_path }
+      link_path     { regions_path }
       visible_when  { true }
       enabled_when  { true }
       active_when   { in_action('any').of_controller('regions') }
