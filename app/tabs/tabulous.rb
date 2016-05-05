@@ -34,8 +34,72 @@ Tabulous.setup do
       link_path     { users_path }
       visible_when  { true }
       enabled_when  { true }
-      active_when   { in_action('any').of_controller('users') }
+      active_when do
+        in_action('index').of_controller('users')
+        in_action('edit').of_controller('users')
+      end
     end
+
+    registering_tab do
+      text          { t :signin }
+      link_path     { signin_path }
+      visible_when  { current_user.nil? }
+      enabled_when  { true }
+      active_when   { in_action('new').of_controller('sessions') }
+    end
+
+    login_tab do
+      text          { t :signup }
+      link_path     { signup_path }
+      visible_when  { current_user.nil? }
+      enabled_when  { true }
+      active_when   { in_action('new').of_controller('users') }
+    end
+
+    # user functions -->
+    user_tab do
+      text          { current_user.username }
+      http_verb     { :delete }
+      link_path     { user_path(:locale, current_user.id) }
+      visible_when  { current_user }
+      enabled_when  { true }
+      active_when   { a_subtab_is_active }
+    end
+
+    my_page_subtab do
+      text          { t :my_page }
+      link_path     { user_path(current_user.id) }
+      visible_when  { current_user }
+      enabled_when  { true }
+      active_when   { in_action('show').of_controller('users')}
+    end
+
+    logout_subtab do
+      text          { t :signout }
+      http_verb     { :delete }
+      link_path     { signout_path }
+      visible_when  { current_user }
+      enabled_when  { true }
+      active_when   { in_action('destroy').of_controller('sessions') }
+    end
+    # <-- user functions
+
+    language_english_tab do
+      text          { 'fi' }
+      link_path     { url_for( locale: :fi ) }
+      visible_when  { I18n.locale == :en }
+      enabled_when  { true }
+      active_when   { false }
+    end
+
+    language_finnish_tab do
+      text          { 'en' }
+      link_path     { url_for( locale: :en ) }
+      visible_when  { I18n.locale == :fi }
+      enabled_when  { true }
+      active_when   { false }
+    end
+
 
   end
 

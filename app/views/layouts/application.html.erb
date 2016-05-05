@@ -10,14 +10,17 @@
   </head>
   <body>
 
-    <header>
-      <%= render 'layouts/navigation' %>
-    </header>
-    <main role="main">
+
+      <header>
+        <%= render 'layouts/navigation' %>
+      </header>
+
+      <div class="container">
       <%= render 'layouts/messages' %>
-      <div class="center-block" id="central-area">
-        <%= yield %>
-      </div>
-    </main>
+
+      <%= yield %>
+
+
+  </div>
   </body>
 </html>
