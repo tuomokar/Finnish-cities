@@ -26,9 +26,13 @@ class RatingsController < ApplicationController
   def create
     @rating = Rating.new(rating_params)
 
+    @rating.user_id = session[:user_id]
+
+
+
     respond_to do |format|
       if @rating.save
-        format.html { redirect_to @rating, notice: 'Rating was successfully created.' }
+        format.html { redirect_to get_place_specific_path(@rating.place_id), notice: 'Rating was successfully created.' }
         format.json { render :show, status: :created, location: @rating }
       else
         format.html { render :new }
@@ -69,6 +73,12 @@ class RatingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def rating_params
-      params.require(:rating).permit(:comment, :place_id, :user_id)
+      params.require(:rating).permit(:comment, :place_id)
+    end
+
+    def get_place_specific_path(place_id)
+      place = Place.find_by id:place_id
+
+      restaurant_path(place.specific)
     end
 end

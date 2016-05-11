@@ -10,7 +10,20 @@
   <%= @restaurant.link %>
 </p>
 
+<% if current_user %>
+
+    <h3><%= t :Rate_restaurant %></h3>
+
+    <%= form_for(@rating) do |f| %>
+        <%= f.hidden_field :place_id, value: @restaurant.acting_as.id %>
+        score: <%= f.number_field :points %>
+        <%= f.submit (t :rate), class:"btn btn-primary" %>
+    <% end %>
+<% end %>
+<br>
+
 <% if can? :edit, Restaurant %>
   <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
 <% end %>
+
 <%= link_to 'Back', restaurants_path %>
