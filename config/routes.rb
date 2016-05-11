@@ -3,10 +3,13 @@ Rails.application.routes.draw do
   scope "(:locale)", locale: /en|fi/ do
     resources :regions
     resources :municipalities
+
     resources :users
 
     resources :places
     resources :restaurants
+
+    resources :ratings
 
     # alternative path to registering
     get 'signup', to: 'users#new'
