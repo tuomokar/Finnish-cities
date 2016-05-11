@@ -1,29 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Places</h1>
+<h1><%= t :Restaurants %></h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Link</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @places.each do |place| %>
-      <tr>
-        <td><%= place.name %></td>
-        <td><%= place.link %></td>
-        <td><%= link_to 'Show', place %></td>
-        <td><%= link_to 'Edit', edit_place_path(place) %></td>
-        <td><%= link_to 'Destroy', place, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<ul>
+  <% @restaurants.each do |restaurant| %>
+      <li><%= link_to restaurant.name, restaurant %></li>
+  <% end %>
+</ul><br>
 
 <br>
 
-<%= link_to 'New Place', new_place_path %>
+<%= link_to (t :New_place), new_place_path %>
