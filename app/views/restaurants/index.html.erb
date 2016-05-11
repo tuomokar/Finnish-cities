@@ -10,4 +10,6 @@
   <% end %>
 </ul><br>
 
-<%= link_to (t :New_restaurant), new_restaurant_path %>
+<% if can? :create, Restaurant %>
+  <%= link_to (t :New_restaurant), new_restaurant_path %>
+<% end %>

@@ -16,7 +16,7 @@ class Ability
       can [:create, :new], User
 
 
-      can :read, [Region, Municipality]
+      can :read, [Region, Municipality, Place, Restaurant]
     end
     # Define abilities for the passed in user here. For example:
     #
