@@ -4,7 +4,9 @@ Rails.application.routes.draw do
     resources :regions
     resources :municipalities
     resources :users
+
     resources :places
+    resources :restaurants
 
     # alternative path to registering
     get 'signup', to: 'users#new'

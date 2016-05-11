@@ -84,8 +84,6 @@ ActiveRecord::Schema.define(version: 20160419192842) do
   end
 
   create_table "restaurants", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
