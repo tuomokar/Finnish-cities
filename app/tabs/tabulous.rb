@@ -2,7 +2,6 @@ Tabulous.setup do
 
   tabs do
 
-   # <%= link_to (t :Home), root_path, class: 'navbar-brand' %>
     home_tab do
       text          { t :Home }
       link_path     { root_path }
@@ -24,9 +23,7 @@ Tabulous.setup do
       link_path     { municipalities_path }
       visible_when  { true }
       enabled_when  { true }
-      active_when do
-        in_action('any').of_controller('municipalities')
-      end
+      active_when   { in_action('any').of_controller('municipalities') }
     end
 
     users_tab do
@@ -40,6 +37,15 @@ Tabulous.setup do
       end
     end
 
+    places_tab do
+      text          { t :Places }
+      link_path     { places_path }
+      visible_when  { true }
+      enabled_when  { true }
+      active_when   { in_action('any').of_controller('restaurants') }
+    end
+
+    # user related functions -->
     registering_tab do
       text          { t :signin }
       link_path     { signin_path }
@@ -56,7 +62,6 @@ Tabulous.setup do
       active_when   { in_action('new').of_controller('users') }
     end
 
-    # user functions -->
     user_tab do
       text          { current_user.username }
       http_verb     { :delete }
@@ -84,6 +89,7 @@ Tabulous.setup do
     end
     # <-- user functions
 
+    # -- language -->
     language_english_tab do
       text          { 'fi' }
       link_path     { url_for( locale: :fi ) }
@@ -99,7 +105,7 @@ Tabulous.setup do
       enabled_when  { true }
       active_when   { false }
     end
-
+  # <-- language
 
   end
 
