@@ -45,6 +45,14 @@ Tabulous.setup do
       active_when   { in_action('any').of_controller('places') }
     end
 
+    ratings_tab do
+      text          { t :Ratings }
+      link_path     { ratings_path }
+      visible_when  { current_user and current_user.admin }
+      enabled_when  { true }
+      active_when   { in_action('any').of_controller('ratings') }
+    end
+
     # user related functions -->
     registering_tab do
       text          { t :signin }
