@@ -42,7 +42,7 @@ Tabulous.setup do
       link_path     { places_path }
       visible_when  { true }
       enabled_when  { true }
-      active_when   { in_action('any').of_controller('restaurants') }
+      active_when   { in_action('any').of_controller('places') }
     end
 
     # user related functions -->
