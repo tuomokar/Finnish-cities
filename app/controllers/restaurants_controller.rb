@@ -2,28 +2,28 @@ class RestaurantsController < ApplicationController
   before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
   load_and_authorize_resource
 
-  # GET /restaurants
-  # GET /restaurants.json
+  # GET /places
+  # GET /places.json
   def index
     @restaurants = Restaurant.all
   end
 
-  # GET /restaurants/1
-  # GET /restaurants/1.json
+  # GET /places/1
+  # GET /places/1.json
   def show
   end
 
-  # GET /restaurants/new
+  # GET /places/new
   def new
     @restaurant = Restaurant.new
   end
 
-  # GET /restaurants/1/edit
+  # GET /places/1/edit
   def edit
   end
 
-  # POST /restaurants
-  # POST /restaurants.json
+  # POST /places
+  # POST /places.json
   def create
     @restaurant = Restaurant.new(restaurant_params)
 
@@ -38,8 +38,8 @@ class RestaurantsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /restaurants/1
-  # PATCH/PUT /restaurants/1.json
+  # PATCH/PUT /places/1
+  # PATCH/PUT /places/1.json
   def update
     respond_to do |format|
       if @restaurant.update(restaurant_params)
@@ -52,8 +52,8 @@ class RestaurantsController < ApplicationController
     end
   end
 
-  # DELETE /restaurants/1
-  # DELETE /restaurants/1.json
+  # DELETE /places/1
+  # DELETE /places/1.json
   def destroy
     @restaurant.destroy
     respond_to do |format|
