@@ -12,3 +12,8 @@ en:
               not_blank: can't be blank
               password_too_short: needs to be at least 6 characters long
               one_capital_and_letter: needs to have at least one capital letter and one digit
+        place:
+          attributes:
+            name:
+              not_unique: '^Place with that name already exists'
+              place_name_too_short: must contain at least two letters
