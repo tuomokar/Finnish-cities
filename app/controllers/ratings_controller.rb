@@ -28,14 +28,14 @@ class RatingsController < ApplicationController
 
     @rating.user_id = session[:user_id]
 
-
-
     respond_to do |format|
       if @rating.save
-        format.html { redirect_to get_place_specific_path(@rating.place_id), notice: 'Rating was successfully created.' }
+        format.html { redirect_to :back, notice: 'Rating was successfully created.' }
         format.json { render :show, status: :created, location: @rating }
       else
-        format.html { render :new }
+        set_place(@rating.place_id)
+
+        format.html { redirect_to :back, flash: { :errors => @rating.errors.full_messages }  }
         format.json { render json: @rating.errors, status: :unprocessable_entity }
       end
     end
@@ -73,12 +73,12 @@ class RatingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def rating_params
-      params.require(:rating).permit(:comment, :place_id)
+      params.require(:rating).permit(:comment, :place_id, :points)
     end
 
-    def get_place_specific_path(place_id)
+    def set_place(place_id)
       place = Place.find_by id:place_id
-
-      restaurant_path(place.specific)
+      @restaurant = place.specific
     end
+
 end
