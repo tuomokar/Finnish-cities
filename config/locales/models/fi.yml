@@ -15,6 +15,11 @@ fi:
             name:
               not_unique: '^On jo olemassa paikka tuolla nimellä'
               place_name_too_short: '^Nimen tulee sisältää vähintään 2 merkkiä'
+        rating:
+          attributes:
+            points:
+              greater_than_or_equal_to_1: '^Pisteiden täytyy olla vähintään 1'
+              less_than_or_equal_to_5: '^Pisteiden täytyy olla enintään 5'
     attributes:
       user:
         username: käyttäjänimi
