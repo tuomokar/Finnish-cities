@@ -28,12 +28,14 @@ class RatingsController < ApplicationController
 
     @rating.user_id = session[:user_id]
 
+
+
     respond_to do |format|
       if @rating.save
         format.html { redirect_to :back, notice: 'Rating was successfully created.' }
         format.json { render :show, status: :created, location: @rating }
       else
-        set_place(@rating.place_id)
+        set_place(@rating.place)
 
         format.html { redirect_to :back, flash: { :errors => @rating.errors.full_messages }  }
         format.json { render json: @rating.errors, status: :unprocessable_entity }
@@ -76,8 +78,7 @@ class RatingsController < ApplicationController
       params.require(:rating).permit(:comment, :place_id, :points)
     end
 
-    def set_place(place_id)
-      place = Place.find_by id:place_id
+    def set_place(place)
       @restaurant = place.specific
     end
 
