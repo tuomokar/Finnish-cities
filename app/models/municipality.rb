@@ -3,4 +3,5 @@ class Municipality < ActiveRecord::Base
 
   belongs_to :region
   has_many :places
+  has_many :ratings, through: :places
 end
