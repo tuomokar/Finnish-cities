@@ -25,10 +25,7 @@ class RatingsController < ApplicationController
   # POST /ratings.json
   def create
     @rating = Rating.new(rating_params)
-
     @rating.user_id = session[:user_id]
-
-
 
     respond_to do |format|
       if @rating.save
