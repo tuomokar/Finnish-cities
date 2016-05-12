@@ -28,4 +28,9 @@ FactoryGirl.define do
     password_confirmation "passwordA1"
     admin false
   end
+
+  factory :restaurant do
+    name "Awesome place"
+    link "http://awesome-restaurant.com"
+  end
 end

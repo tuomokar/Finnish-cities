@@ -18,8 +18,7 @@ fi:
         rating:
           attributes:
             points:
-              greater_than_or_equal_to_1: '^Pisteiden täytyy olla vähintään 1'
-              less_than_or_equal_to_5: '^Pisteiden täytyy olla enintään 5'
+              greater_than_or_equal_to_1: '^Pisteiden täytyy olla välillä 1 ja 5'
     attributes:
       user:
         username: käyttäjänimi
