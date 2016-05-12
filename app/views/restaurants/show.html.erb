@@ -9,34 +9,47 @@
   <strong> <%= t :Link %>:</strong>
   <%= @restaurant.link %>
 </p>
-W
+
 <% if current_user %>
 
-    <h3><%= t :Rate_restaurant %></h3>
+    <div>
+      <h3><%= t :Rate_restaurant %></h3>
 
-    <%= form_for(@rating) do |f| %>
+      <%= form_for(@rating) do |f| %>
 
-        <% if flash[:errors] %>
-            <div id="error_explanation">
-              <h2> <%= t :found_errors, count: flash[:errors].count %> </h2>
+          <% if flash[:errors] %>
+              <div id="error_explanation">
+                <h2> <%= t :found_errors, count: flash[:errors].count %> </h2>
 
-              <ul>
-                <% flash[:errors].each do |message| %>
-                    <li><%= message %></li>
-                <% end %>
-              </ul>
-            </div>
-        <% end %>
+                <ul>
+                  <% flash[:errors].each do |message| %>
+                      <li><%= message %></li>
+                  <% end %>
+                </ul>
+              </div>
+          <% end %>
 
-        <%= f.hidden_field :place_id, value: @restaurant.acting_as.id %>
-        score: <%= f.number_field :points %>
-        <%= f.submit (t :rate), class:"btn btn-primary" %>
-    <% end %>
+          <%= f.hidden_field :place_id, value: @restaurant.acting_as.id %>
+
+          <div class="field">
+            <%= f.label (t :Points) %><br>
+            <%= f.number_field :points %>
+          </div>
+          <div class="field">
+            <%= f.label (t :Comment) %><br>
+            <%= f.text_area :comment, class:'form-control', rows:"10" %>
+          </div>
+
+          <%= f.submit (t :Rate), class:"btn btn-primary" %>
+      <% end %>
+    </div>
+
+
 <% end %>
 <br>
 
 <% if can? :edit, Restaurant %>
-  <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
+    <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
 <% end %>
 
 <%= link_to 'Back', restaurants_path %>
