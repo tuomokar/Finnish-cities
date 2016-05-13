@@ -29,5 +29,7 @@ module Finnishcities
     # uses the other locale's translations by default if they're not given in the other locale
     config.i18n.fallbacks = true
     Globalize.fallbacks = {:en => [:en, :fi], :fi => [:fi, :en]}
+
+    config.assets.paths << Rails.root.join('vendor', 'assets', 'components')
   end
 end

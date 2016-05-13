@@ -1,0 +1,19 @@
+{
+  "name": "Finnish-municipalities",
+  "homepage": "https://github.com/tuomokar/Finnish-municipalities",
+  "authors": [
+    "Tuomo Oila <tuomo.a.karkkainen@helsinki.fi>"
+  ],
+  "description": "App to contain info on Finnish municipalities",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/assets/components",
+    "test",
+    "tests"
+  ]
+}

@@ -8,19 +8,15 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
-  <body>
-
-
+  <body ng-app="FinnishMunicipalities">
       <header>
         <%= render 'layouts/navigation' %>
       </header>
 
       <div class="container">
-      <%= render 'layouts/messages' %>
+        <%= render 'layouts/messages' %>
+        <%= yield %>
+      </div>
 
-      <%= yield %>
-
-
-  </div>
   </body>
 </html>
