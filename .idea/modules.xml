@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$USER_HOME$/programming/sekalaista/random-repoja/Kirpputori/.idea/Kirpputori.iml" filepath="$USER_HOME$/programming/sekalaista/random-repoja/Kirpputori/.idea/Kirpputori.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/finnishcities.iml" filepath="$PROJECT_DIR$/.idea/finnishcities.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../wadror_k2016/wadror/.idea/ratebeer.iml" filepath="$PROJECT_DIR$/../../wadror_k2016/wadror/.idea/ratebeer.iml" />
     </modules>
