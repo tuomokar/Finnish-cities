@@ -6,14 +6,8 @@ class Municipality < ActiveRecord::Base
   has_many :ratings, through: :places
 
   def top_rated
-    return [] unless ratings.count != 0
-
-    places_to_return = []
-
-    places.each do |place|
-      places_to_return << place if place.ratings.any?
-    end
-
-    places_to_return
+    places_with_any_ratings = places.joins(:ratings)
+    sorted_rated_places_in_desc_order = places_with_any_ratings.sort_by{ |p| -(p.average_rating) }
+    sorted_rated_places_in_desc_order.take 3
   end
 end
