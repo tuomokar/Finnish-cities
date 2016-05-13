@@ -27,8 +27,19 @@
 
 <p>
   <strong><%= t :Region %>:</strong>
-  <%= @municipality.region_id %>
+  <%= @municipality.region %>
 </p>
+
+<h3><%= t :Top_rated %>:</h3>
+<% if @municipality.top_rated.empty? %>
+  <p><%= t :Mun_no_ratings %></p>
+<% end %>
+
+<% @municipality.top_rated.each do |pl| %>
+    <ul>
+      <li><%= link_to pl.name, pl.specific %></li>
+    </ul>
+<% end %>
 
 <% if can? :create, Municipality %>
     <%= link_to (t :Edit), edit_municipality_path(@municipality) %> |

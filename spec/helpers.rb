@@ -10,7 +10,6 @@ module Helpers
   def change_language
     if I18n.locale == :en
       click_link('fi')
-      puts
     else
       click_link('en')
     end

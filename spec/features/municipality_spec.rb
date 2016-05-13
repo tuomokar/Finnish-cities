@@ -111,6 +111,32 @@ describe Municipality do
       expect(page).to have_content "Municipality was successfully updated."
       expect(page).to have_content 'test_mun'
     end
-  end
 
+    describe "top rated places" do
+      it "shows the top rated places" do
+        add_rated_places(municipality, ["place1", "place2"])
+        visit municipality_path(:en, municipality.id)
+
+        expect(page).to have_content("The top rated places:")
+        expect(page).to have_content("place1")
+        expect(page).to have_content("place2")
+
+        change_language
+
+        expect(page).to have_content("Parhaimmat paikat:")
+      end
+
+      it "tells there are no rated places if there are no rated places" do
+        visit municipality_path(:en, municipality.id)
+
+        expect(page).to have_content("The top rated places:")
+        expect(page).to have_content("Municipality doesn't have any rated places yet")
+
+        change_language
+
+        expect(page).to have_content("Parhaimmat paikat:")
+        expect(page).to have_content("Kunnalla ei ole vielä yhtään arvosteltua paikkaa")
+      end
+    end
+  end
 end
