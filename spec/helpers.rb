@@ -15,4 +15,18 @@ module Helpers
       click_link('en')
     end
   end
+
+  def add_rated_places(municipality, names)
+    points = 1
+    names.each do |name|
+      restaurant = Restaurant.create name:name
+      rating = Rating.create points:points
+      restaurant.ratings << rating
+
+      municipality.places << restaurant
+
+      points += 1
+      points = 1 if points == 6
+    end
+  end
 end

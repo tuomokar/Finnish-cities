@@ -1,5 +1,7 @@
 require 'rails_helper'
 
+include Helpers
+
 RSpec.describe Municipality, type: :model do
 
 
@@ -83,19 +85,5 @@ RSpec.describe Municipality, type: :model do
       expect(top_rated.second.name).to eq("extra_place")
       expect(top_rated.third.name).to eq("place4")
     end
-  end
-end
-
-def add_rated_places(municipality, names)
-  points = 1
-  names.each do |name|
-    restaurant = Restaurant.create name:name
-    rating = Rating.create points:points
-    restaurant.ratings << rating
-
-    municipality.places << restaurant
-
-    points += 1
-    points = 1 if points == 6
   end
 end
