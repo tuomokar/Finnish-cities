@@ -114,6 +114,9 @@ GEM
     mini_portile2 (2.0.0)
     minitest (5.8.4)
     multi_json (1.11.2)
+    ngannotate-rails (1.2.2)
+      execjs
+      rails (>= 3.1)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
     pg (0.18.4)
@@ -236,6 +239,7 @@ DEPENDENCIES
   jquery-rails
   jquery-turbolinks
   launchy
+  ngannotate-rails
   pg
   rails (= 4.2.6)
   rails_12factor
