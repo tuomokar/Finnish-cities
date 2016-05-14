@@ -12,6 +12,7 @@ deploy:
   provider: heroku
   api_key:
     secure: pWLY3QKaxoYZenXEgY9O0n7g0Fw08YtxcXcuNX25H/ZF9AtxCiINDHpoDzcUOrmdW2tVPJcD8wD5Boz57TP+uHS6rilgblFpwF9bH0CNiNTCTbkRp83THEh335DV4JAQuCHWKvHiY105+7dnQZBKJnZncjVce8ByQg1+C9FmsaSUm1Os0ka/3seCPAwzQd4YHTKQELc6ORQFvW9Mx+muJbISEZtIxRitn+j67Sn6QZA1ypyR3YQ3Fj6wnECd4fFXU/ui3G26/IWjTcIaT/Cf8AnnBzpmauMVBf9+NAi8uMrDK4A0FK0hcljmY8kpu7EX93GQ5klfl2b8dgaGt6MMseW/l+ZiUHwjti3QUAj7wpz0Zkxa9XCHmsg4t02fKeZLq1zRvcjheqszTXxV8+mGNLXukFpTKjIWNTjbmfACKdrmzCMjKPAcAjLq9XLHEP7RpWRgSW8VyTk8+meFTRhAIg36r7hRSBQn1LzIzEKMh4tqYLcOIsYvtfzOdISovG0tFBPRhSFBEwpqfbc1CxRfDYvG85Lo/GxPdfVrfu/B2OGGQLoIrNw0gyec/HQBk0kpfLTE/a//nI3t+8COsZgnSYezUXlyzIMbC7BrkNIAMjtHGnezexaaLWOkEgm1Gi1kTLUSRUmQj50petSVdO2sk3SCCmbTrOwsN5kjfav/K24=
+  run: "rake db:migrate"
   app: seefinland
   on:
     repo: tuomokar/Finnish-municipalities
