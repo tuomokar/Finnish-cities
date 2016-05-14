@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
 
   has_many :ratings
 
+  scope :admins, -> { where admin:true }
+
   validates :username, :presence => false,
             :uniqueness => { :message =>  :not_unique },
             :length => { minimum: 3, :message => :username_too_short }

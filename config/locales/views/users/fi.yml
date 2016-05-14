@@ -5,3 +5,6 @@ fi:
   new_user: uusi käyttäjä
   changing_user_information: muutetaan käyttäjän tietoja
   New_user: Uusi käyttäjä
+  Current_admins: Tämänhetkiset admin-käyttäjät
+  Contact: Otathan yhteyttä admineihin jos on tarvetta! (sori, ei yhteystietoja tällä hetkellä tarjolla - ne on tulossa myöhemmin)
+  Register: Rekisteröidy
