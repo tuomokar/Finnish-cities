@@ -1,35 +1,43 @@
 require 'rails_helper'
 
+include Helpers
+
 describe "Users page" do
-  describe "in English" do
 
-    it "shows the 'Users' text" do
-      visit users_path
-      expect(page).to have_content "Users"
-    end
+  let!(:user){FactoryGirl.create(:user, username:"Foob") }
+  let!(:admin){FactoryGirl.create(:user, username:"Admin1", admin: true) }
 
-    describe "having existing users" do
-      let(:usernames){["user1", "user2", "user3"]}
+  describe "for admin" do
+    it "users are visible" do
+      sign_in(username:"Admin1", password:"passwordA1")
+      visit users_path(:en)
 
-      it "lists each users' name" do
-        usernames.each do |username|
-          FactoryGirl.create(:user, username:username)
-        end
+      expect(page).to have_content "Current admin users"
+      expect(page).to have_content "Users:"
+      expect(page).to have_content("Foob")
 
-        visit users_path
+      change_language
+      expect(page).to have_content "Tämänhetkiset admin-käyttäjät"
+      expect(page).to have_content "Käyttäjät:"
+      expect(page).to have_content("Foob")
 
-        usernames.each do |username|
-          expect(page).to have_content username
-        end
-      end
     end
   end
 
-  describe "in Finnish" do
+  describe "for normal user" do
+    it "users are not visible" do
+      sign_in(username:"Foob", password:"passwordA1")
+      visit users_path(:en)
 
-    it "shows the 'Käyttäjät' text" do
-      visit users_path(:fi)
-      expect(page).to have_content "Käyttäjät"
+      expect(page).to have_content "Current admin users"
+      expect(page).to have_content "Admin1"
+      expect(page).to_not have_content "Users:"
+
+      change_language
+      expect(page).to have_content "Tämänhetkiset admin-käyttäjät"
+      expect(page).to have_content "Admin1"
+      expect(page).to_not have_content "Käyttäjät:"
+
     end
   end
 end
