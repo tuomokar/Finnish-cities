@@ -10,7 +10,7 @@
     <ul class="list-group">
 
       <li ng-repeat="place in places | filter:query" class="list-group-item">
-        <a ng-href="/{{locale}}/{{place.base_path}}/{{place.specific.id}}">{{place.specific.name}}</a>
+        <a ng-href="/{{place.base_path}}/{{place.specific.id}}" class="btn btn-primary btn-sm">{{place.specific.name}}</a>
       </li>
 
     </ul>
@@ -20,9 +20,9 @@
 <div class="col-md-6">
 
   <h1><%= t :Restaurants %></h1>
-  <ul>
+  <ul class="list-group"><br>
     <% @restaurants.each do |restaurant| %>
-        <li><%= link_to restaurant.name, restaurant %></li>
+        <li class="list-group-item"><%= link_to restaurant.name, restaurant, class:'btn btn-primary btn-sm' %></li>
     <% end %>
   </ul><br>
 </div>
@@ -32,5 +32,3 @@
       <%= link_to (t :New_place), new_place_path %>
   <% end %>
 </div>
-
-
