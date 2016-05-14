@@ -40,6 +40,9 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     addressable (2.4.0)
+    angular-turbolinks (0.1.0)
+      coffee-rails
+      turbolinks
     arel (6.0.3)
     autoprefixer-rails (6.3.6)
       execjs
@@ -225,6 +228,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_record-acts_as
+  angular-turbolinks
   bcrypt (~> 3.1.7)
   bootstrap-sass
   byebug
