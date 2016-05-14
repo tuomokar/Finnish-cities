@@ -1,0 +1,209 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/nodejs',
+1 verbose cli   '/usr/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '-g',
+1 verbose cli   'ng-annotate' ]
+2 info using npm@2.15.1
+3 info using node@v4.4.4
+4 verbose install initial load of /usr/lib/package.json
+5 verbose readDependencies loading dependencies from /usr/lib/package.json
+6 silly cache add args [ 'ng-annotate', null ]
+7 verbose cache add spec ng-annotate
+8 silly cache add parsed spec Result {
+8 silly cache add   raw: 'ng-annotate',
+8 silly cache add   scope: null,
+8 silly cache add   name: 'ng-annotate',
+8 silly cache add   rawSpec: '',
+8 silly cache add   spec: 'latest',
+8 silly cache add   type: 'tag' }
+9 silly addNamed ng-annotate@latest
+10 verbose addNamed "latest" is being treated as a dist-tag for ng-annotate
+11 info addNameTag [ 'ng-annotate', 'latest' ]
+12 silly mapToRegistry name ng-annotate
+13 silly mapToRegistry using default registry
+14 silly mapToRegistry registry https://registry.npmjs.org/
+15 silly mapToRegistry data Result {
+15 silly mapToRegistry   raw: 'ng-annotate',
+15 silly mapToRegistry   scope: null,
+15 silly mapToRegistry   name: 'ng-annotate',
+15 silly mapToRegistry   rawSpec: '',
+15 silly mapToRegistry   spec: 'latest',
+15 silly mapToRegistry   type: 'tag' }
+16 silly mapToRegistry uri https://registry.npmjs.org/ng-annotate
+17 verbose addNameTag registry:https://registry.npmjs.org/ng-annotate not in flight; fetching
+18 verbose request uri https://registry.npmjs.org/ng-annotate
+19 verbose request no auth needed
+20 info attempt registry request try #1 at 5:23:35 PM
+21 verbose request id 12f0e45c7102b3dd
+22 http request GET https://registry.npmjs.org/ng-annotate
+23 http 200 https://registry.npmjs.org/ng-annotate
+24 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+24 verbose headers   etag: '"60894J6TVSH6YTO6WPH639Y02"',
+24 verbose headers   'content-type': 'application/json',
+24 verbose headers   'content-encoding': 'gzip',
+24 verbose headers   'cache-control': 'max-age=300',
+24 verbose headers   'content-length': '8961',
+24 verbose headers   'accept-ranges': 'bytes',
+24 verbose headers   date: 'Sat, 14 May 2016 14:23:36 GMT',
+24 verbose headers   via: '1.1 varnish',
+24 verbose headers   age: '189',
+24 verbose headers   connection: 'keep-alive',
+24 verbose headers   'x-served-by': 'cache-ams4147-AMS',
+24 verbose headers   'x-cache': 'HIT',
+24 verbose headers   'x-cache-hits': '1',
+24 verbose headers   'x-timer': 'S1463235816.235932,VS0,VE0',
+24 verbose headers   vary: 'Accept-Encoding' }
+25 silly get cb [ 200,
+25 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+25 silly get     etag: '"60894J6TVSH6YTO6WPH639Y02"',
+25 silly get     'content-type': 'application/json',
+25 silly get     'content-encoding': 'gzip',
+25 silly get     'cache-control': 'max-age=300',
+25 silly get     'content-length': '8961',
+25 silly get     'accept-ranges': 'bytes',
+25 silly get     date: 'Sat, 14 May 2016 14:23:36 GMT',
+25 silly get     via: '1.1 varnish',
+25 silly get     age: '189',
+25 silly get     connection: 'keep-alive',
+25 silly get     'x-served-by': 'cache-ams4147-AMS',
+25 silly get     'x-cache': 'HIT',
+25 silly get     'x-cache-hits': '1',
+25 silly get     'x-timer': 'S1463235816.235932,VS0,VE0',
+25 silly get     vary: 'Accept-Encoding' } ]
+26 verbose get saving ng-annotate to /home/tuomokar/.npm/registry.npmjs.org/ng-annotate/.cache.json
+27 verbose correctMkdir /home/tuomokar/.npm correctMkdir not in flight; initializing
+28 silly addNameTag next cb for ng-annotate with tag latest
+29 silly addNamed ng-annotate@1.2.1
+30 verbose addNamed "1.2.1" is a plain semver version for ng-annotate
+31 silly mapToRegistry name ng-annotate
+32 silly mapToRegistry using default registry
+33 silly mapToRegistry registry https://registry.npmjs.org/
+34 silly mapToRegistry data Result {
+34 silly mapToRegistry   raw: 'ng-annotate',
+34 silly mapToRegistry   scope: null,
+34 silly mapToRegistry   name: 'ng-annotate',
+34 silly mapToRegistry   rawSpec: '',
+34 silly mapToRegistry   spec: 'latest',
+34 silly mapToRegistry   type: 'tag' }
+35 silly mapToRegistry uri https://registry.npmjs.org/ng-annotate
+36 verbose addRemoteTarball https://registry.npmjs.org/ng-annotate/-/ng-annotate-1.2.1.tgz not in flight; adding
+37 verbose addRemoteTarball [ 'https://registry.npmjs.org/ng-annotate/-/ng-annotate-1.2.1.tgz',
+37 verbose addRemoteTarball   'eb8bc1a6731c70d08af6b02c3eaf1a6e3fb9e6bb' ]
+38 info retry fetch attempt 1 at 5:23:36 PM
+39 info attempt registry request try #1 at 5:23:36 PM
+40 http fetch GET https://registry.npmjs.org/ng-annotate/-/ng-annotate-1.2.1.tgz
+41 http fetch 200 https://registry.npmjs.org/ng-annotate/-/ng-annotate-1.2.1.tgz
+42 silly fetchAndShaCheck shasum eb8bc1a6731c70d08af6b02c3eaf1a6e3fb9e6bb
+43 verbose addTmpTarball /tmp/npm-19492-d39c0879/registry.npmjs.org/ng-annotate/-/ng-annotate-1.2.1.tgz not in flight; adding
+44 verbose addTmpTarball already have metadata; skipping unpack for ng-annotate@1.2.1
+45 verbose correctMkdir /home/tuomokar/.npm correctMkdir not in flight; initializing
+46 silly cache afterAdd ng-annotate@1.2.1
+47 verbose afterAdd /home/tuomokar/.npm/ng-annotate/1.2.1/package/package.json not in flight; writing
+48 verbose correctMkdir /home/tuomokar/.npm correctMkdir not in flight; initializing
+49 verbose afterAdd /home/tuomokar/.npm/ng-annotate/1.2.1/package/package.json written
+50 silly install resolved [ { name: 'ng-annotate',
+50 silly install resolved     version: '1.2.1',
+50 silly install resolved     description: 'add, remove and rebuild angularjs dependency injection annotations',
+50 silly install resolved     main: 'build/es5/ng-annotate-main.js',
+50 silly install resolved     repository:
+50 silly install resolved      { type: 'git',
+50 silly install resolved        url: 'git+https://github.com/olov/ng-annotate.git' },
+50 silly install resolved     dependencies:
+50 silly install resolved      { acorn: '~2.6.4',
+50 silly install resolved        alter: '~0.2.0',
+50 silly install resolved        'convert-source-map': '~1.1.2',
+50 silly install resolved        optimist: '~0.6.1',
+50 silly install resolved        'ordered-ast-traverse': '~1.1.1',
+50 silly install resolved        'simple-fmt': '~0.1.0',
+50 silly install resolved        'simple-is': '~0.2.0',
+50 silly install resolved        'source-map': '~0.5.3',
+50 silly install resolved        stable: '~0.1.5',
+50 silly install resolved        stringmap: '~0.2.2',
+50 silly install resolved        stringset: '~0.2.1',
+50 silly install resolved        tryor: '~0.1.2' },
+50 silly install resolved     devDependencies:
+50 silly install resolved      { 'coffee-script': '~1.10.0',
+50 silly install resolved        defs: '~1.1.1',
+50 silly install resolved        diff: '~2.2.1',
+50 silly install resolved        'find-line-column': '~0.5.2' },
+50 silly install resolved     keywords:
+50 silly install resolved      [ 'angular',
+50 silly install resolved        'angularjs',
+50 silly install resolved        'di',
+50 silly install resolved        'dependency',
+50 silly install resolved        'injection',
+50 silly install resolved        'annotate',
+50 silly install resolved        'annotation',
+50 silly install resolved        'annotations',
+50 silly install resolved        'transformation' ],
+50 silly install resolved     scripts: { test: 'node --harmony run-tests' },
+50 silly install resolved     bin: { 'ng-annotate': './build/es5/ng-annotate' },
+50 silly install resolved     author: { name: 'Olov Lassus', email: 'olov.lassus@gmail.com' },
+50 silly install resolved     license: 'MIT',
+50 silly install resolved     bugs: { url: 'https://github.com/olov/ng-annotate/issues' },
+50 silly install resolved     homepage: 'https://github.com/olov/ng-annotate#readme',
+50 silly install resolved     _id: 'ng-annotate@1.2.1',
+50 silly install resolved     _shasum: 'eb8bc1a6731c70d08af6b02c3eaf1a6e3fb9e6bb',
+50 silly install resolved     _resolved: 'https://registry.npmjs.org/ng-annotate/-/ng-annotate-1.2.1.tgz',
+50 silly install resolved     _from: 'ng-annotate@latest',
+50 silly install resolved     _npmVersion: '2.14.4',
+50 silly install resolved     _nodeVersion: '4.1.1',
+50 silly install resolved     _npmUser: { name: 'olov', email: 'olov.lassus@gmail.com' },
+50 silly install resolved     maintainers: [ [Object] ],
+50 silly install resolved     dist:
+50 silly install resolved      { shasum: 'eb8bc1a6731c70d08af6b02c3eaf1a6e3fb9e6bb',
+50 silly install resolved        tarball: 'https://registry.npmjs.org/ng-annotate/-/ng-annotate-1.2.1.tgz' },
+50 silly install resolved     directories: {} } ]
+51 info install ng-annotate@1.2.1 into /usr/lib
+52 info installOne ng-annotate@1.2.1
+53 verbose installOne of ng-annotate to /usr/lib not in flight; installing
+54 verbose correctMkdir /home/tuomokar/.npm/_locks correctMkdir not in flight; initializing
+55 verbose lock using /home/tuomokar/.npm/_locks/ng-annotate-cf09291d619d746c.lock for /usr/lib/node_modules/ng-annotate
+56 silly install write writing ng-annotate 1.2.1 to /usr/lib/node_modules/ng-annotate
+57 verbose unbuild lib/node_modules/ng-annotate
+58 silly gentlyRm /usr/lib/node_modules/ng-annotate is being purged from base /usr
+59 verbose gentlyRm don't care about contents; nuking /usr/lib/node_modules/ng-annotate
+60 verbose tar unpack /home/tuomokar/.npm/ng-annotate/1.2.1/package.tgz
+61 verbose tar unpacking to /usr/lib/node_modules/ng-annotate
+62 silly gentlyRm /usr/lib/node_modules/ng-annotate is being purged
+63 verbose gentlyRm don't care about contents; nuking /usr/lib/node_modules/ng-annotate
+64 silly gunzTarPerm modes [ '775', '664' ]
+65 error tar.unpack untar error /home/tuomokar/.npm/ng-annotate/1.2.1/package.tgz
+66 verbose unlock done using /home/tuomokar/.npm/_locks/ng-annotate-cf09291d619d746c.lock for /usr/lib/node_modules/ng-annotate
+67 verbose fstream_path /usr/lib/node_modules/ng-annotate
+68 verbose fstream_type Directory
+69 verbose fstream_class DirWriter
+70 verbose stack Error: EACCES: permission denied, mkdir '/usr/lib/node_modules/ng-annotate'
+70 verbose stack     at Error (native)
+71 verbose fstream_stack /usr/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:35:25
+71 verbose fstream_stack /usr/lib/node_modules/npm/node_modules/mkdirp/index.js:47:53
+71 verbose fstream_stack FSReqWrap.oncomplete (fs.js:82:15)
+72 verbose cwd /home/tuomokar/kurssijuttuja/wadrorHT_k2016/Finnish-municipalities
+73 error Linux 4.2.0-34-generic
+74 error argv "/usr/bin/nodejs" "/usr/bin/npm" "install" "-g" "ng-annotate"
+75 error node v4.4.4
+76 error npm  v2.15.1
+77 error path /usr/lib/node_modules/ng-annotate
+78 error code EACCES
+79 error errno -13
+80 error syscall mkdir
+81 error Error: EACCES: permission denied, mkdir '/usr/lib/node_modules/ng-annotate'
+81 error     at Error (native)
+81 error  { [Error: EACCES: permission denied, mkdir '/usr/lib/node_modules/ng-annotate']
+81 error   errno: -13,
+81 error   code: 'EACCES',
+81 error   syscall: 'mkdir',
+81 error   path: '/usr/lib/node_modules/ng-annotate',
+81 error   fstream_type: 'Directory',
+81 error   fstream_path: '/usr/lib/node_modules/ng-annotate',
+81 error   fstream_class: 'DirWriter',
+81 error   fstream_stack:
+81 error    [ '/usr/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:35:25',
+81 error      '/usr/lib/node_modules/npm/node_modules/mkdirp/index.js:47:53',
+81 error      'FSReqWrap.oncomplete (fs.js:82:15)' ] }
+82 error Please try running this command again as root/Administrator.
+83 verbose exit [ -13, true ]
+84 verbose unbuild lib/node_modules/ng-annotate
+85 silly gentlyRm /usr/lib/node_modules/ng-annotate is being purged from base /usr
+86 verbose gentlyRm don't care about contents; nuking /usr/lib/node_modules/ng-annotate
