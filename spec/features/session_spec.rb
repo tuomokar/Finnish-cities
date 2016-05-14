@@ -1,6 +1,8 @@
 require 'rails_helper'
 
-describe "Session page" do
+include Helpers
+
+describe "Logging in functions" do
 
   it "non-logged in user can get to signin page" do
     visit signin_path
@@ -33,6 +35,26 @@ describe "Session page" do
 
     expect(page).to have_content("Welcome back!")
     expect(page).to have_content("username: user1 ")
+  end
+
+  it "logged in user can log out" do
+    FactoryGirl.create(:user)
+    sign_in(username:"user1", password:"passwordA1")
+
+    click_link("user1")
+    click_link("signout")
+
+    expect(page).to have_content("Welcome")
+    expect(page).to_not have_content("user1")
+
+    sign_in(username:"user1", password:"passwordA1")
+    change_language
+
+    click_link("user1")
+    click_link("kirjaudu ulos")
+
+    expect(page).to have_content("Tervetuloa")
+    expect(page).to_not have_content("user1")
   end
 
 end
