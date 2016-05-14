@@ -27,7 +27,9 @@
 
 <p>
   <strong><%= t :Region %>:</strong>
-  <%= @municipality.region %>
+  <% if @municipality.region %>
+      <%= @municipality.region.name %>
+  <% end %>
 </p>
 
 <h3><%= t :Top_rated %>:</h3>
