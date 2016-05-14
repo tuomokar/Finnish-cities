@@ -1,9 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <div class="col-md-6">
-  <h1>All places</h1>
+
+  <h1><%= t :All_places %></h1>
+
   <div ng-controller="PlacesController">
-    Search: <input ng-model="query">
+    <%= t :Search %>: <input ng-model="query">
 
     <ul class="list-group">
 
