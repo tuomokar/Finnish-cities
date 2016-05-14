@@ -1,4 +1,4 @@
-var App = angular.module('FinnishMunicipalities', ['ngResource', 'ngRoute']);
+var App = angular.module('FinnishMunicipalities', []);
 
 App.config(function($locationProvider) {
     $locationProvider.html5Mode({
