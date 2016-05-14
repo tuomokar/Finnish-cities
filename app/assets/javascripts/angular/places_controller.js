@@ -1,7 +1,8 @@
-App.controller('PlacesController', function($scope, $http, $location) {
+App.controller('PlacesController', function($scope, $http) {
 
-    $http.get($location.path() + ".json")
-        .then(function (response) {
-            $scope.places = response.data;
+    $http.get('places.json')
+        .success(function (data) {
+            $scope.places = data;
         });
 });
+

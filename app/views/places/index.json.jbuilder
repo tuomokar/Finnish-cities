@@ -1,4 +1,7 @@
+
 json.array!(@places) do |place|
-  json.extract! place, :id, :name, :link
-  json.url place_url(place, format: :json)
+  if place.specific
+    json.extract! place, :specific
+    json.base_path place.specific.class.name.pluralize.downcase
+  end
 end

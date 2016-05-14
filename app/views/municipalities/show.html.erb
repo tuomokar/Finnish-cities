@@ -43,19 +43,6 @@
     </ul>
 <% end %>
 
-<h3>All places of this municipality:</h3>
-<div ng-controller="PlacesController">
-Search: <input ng-model="query">
-
-  <ul class="list-group">
-
-    <li ng-repeat="place in places | filter:query" class="list-group-item">
-      <a ng-href="/{{place.base_path}}/{{place.specific.id}}">{{place.specific.name}}</a>
-    </li>
-
-  </ul>
-</div>
-
 <% if can? :create, Municipality %>
     <%= link_to (t :Edit), edit_municipality_path(@municipality) %> |
     <%= link_to (t :Back), municipalities_path %>

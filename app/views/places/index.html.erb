@@ -1,15 +1,34 @@
 <p id="notice"><%= notice %></p>
 
-<h1><%= t :Restaurants %></h1>
+<div class="col-md-6">
+  <h1>All places</h1>
+  <div ng-controller="PlacesController">
+    Search: <input ng-model="query">
 
-<ul>
-  <% @restaurants.each do |restaurant| %>
-      <li><%= link_to restaurant.name, restaurant %></li>
+    <ul class="list-group">
+
+      <li ng-repeat="place in places | filter:query" class="list-group-item">
+        <a ng-href="/{{place.base_path}}/{{place.specific.id}}">{{place.specific.name}}</a>
+      </li>
+
+    </ul>
+  </div>
+</div>
+
+<div class="col-md-6">
+
+  <h1><%= t :Restaurants %></h1>
+  <ul>
+    <% @restaurants.each do |restaurant| %>
+        <li><%= link_to restaurant.name, restaurant %></li>
+    <% end %>
+  </ul><br>
+</div>
+
+<div class="col-md-12">
+  <% if can? :create, Place %>
+      <%= link_to (t :New_place), new_place_path %>
   <% end %>
-</ul><br>
+</div>
 
-<br>
 
-<% if can? :create, Place %>
-  <%= link_to (t :New_place), new_place_path %>
-<% end %>
