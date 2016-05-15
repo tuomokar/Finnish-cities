@@ -16,6 +16,7 @@ class MunicipalitiesController < ApplicationController
   # GET /municipalities/new
   def new
     @municipality = Municipality.new
+    @regions = Region.all
   end
 
   # GET /municipalities/1/edit
