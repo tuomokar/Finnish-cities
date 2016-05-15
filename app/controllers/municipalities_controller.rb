@@ -28,6 +28,7 @@ class MunicipalitiesController < ApplicationController
   # POST /municipalities.json
   def create
     @municipality = Municipality.new(municipality_params)
+    @municipality.location = Location.new(location_params)
 
     respond_to do |format|
       if @municipality.save
@@ -43,6 +44,7 @@ class MunicipalitiesController < ApplicationController
   # PATCH/PUT /municipalities/1
   # PATCH/PUT /municipalities/1.json
   def update
+    @municipality.location = Location.new(location_params)
     respond_to do |format|
       if @municipality.update(municipality_params)
         format.html { redirect_to @municipality, notice: 'Municipality was successfully updated.' }
@@ -73,5 +75,9 @@ class MunicipalitiesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def municipality_params
       params.require(:municipality).permit(:name, :year, :description, :population, :link, :region_id)
+    end
+
+    def location_params
+      params.require(:location).permit(:latitude, :longitude)
     end
 end
