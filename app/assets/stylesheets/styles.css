@@ -1,1 +1,6 @@
 .btn-sm:visited { color:white; }
+
+#map {
+     width: 500px;
+     height: 400px;
+ }
