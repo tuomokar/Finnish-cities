@@ -29,6 +29,6 @@
     </ul>
 <% end %>
 
-<% if not current_user or (current_user and current_user.admin)%>
+<% if not current_user or admin %>
   <%= link_to (t :Register), new_user_path, class:'btn btn-default' %>
 <% end %>

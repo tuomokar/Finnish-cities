@@ -6,10 +6,16 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
 
   helper_method :current_user
+  helper_method :admin
 
   def current_user
     return nil unless session[:user_id]
     User.find(session[:user_id])
+  end
+
+  def admin
+    return nil unless session[:user_id]
+    return current_user.admin
   end
 
   rescue_from CanCan::AccessDenied do
