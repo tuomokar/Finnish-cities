@@ -26,6 +26,6 @@
 </p>
 
 <% if can? :create, Region %>
-    <%= link_to (t :Edit), edit_region_path(@region) %> |
-    <%= link_to (t :Back), regions_path %>
+    <%= link_to (t :Edit), edit_region_path(@region), class:'btn btn-default' %>
+    <%= link_to (t :Back), regions_path, class:'btn btn-default' %>
 <% end %>

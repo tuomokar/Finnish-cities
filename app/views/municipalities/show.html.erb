@@ -44,6 +44,6 @@
 <% end %>
 
 <% if can? :create, Municipality %>
-    <%= link_to (t :Edit), edit_municipality_path(@municipality) %> |
-    <%= link_to (t :Back), municipalities_path %>
+    <%= link_to (t :Edit), edit_municipality_path(@municipality), class:'btn btn-default' %>
+    <%= link_to (t :Back), municipalities_path, class:'btn btn-default' %>
 <% end %>
