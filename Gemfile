@@ -70,6 +70,8 @@ group :test do
   gem 'capybara'
   gem 'launchy'
   gem 'coveralls'
+  gem 'selenium-webdriver'
+  gem 'capybara-angular'
 end
 
 group :production do
