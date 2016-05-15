@@ -1,5 +1,9 @@
-<h1>New Place</h1>
+<h1><%= t :Choose_place %></h1>
 
-<%= render 'form' %>
+<ul>
+  <% @place_types.each_key do |type| %>
+    <li><%= link_to type, @place_types[type] %></li>
+  <% end %>
+</ul>
 
 <%= link_to 'Back', places_path %>
