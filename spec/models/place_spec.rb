@@ -68,4 +68,70 @@ RSpec.describe Place, type: :model do
       expect(restaurant.average_rating).to eq(4)
     end
   end
+
+  describe "top restaurants" do
+    it "returns an empty array when there are no rated restaurants" do
+      empty_restaurants = Restaurant.top_rated
+
+      expect(empty_restaurants).to be_empty
+    end
+
+    it "returns only one restaurant when there is only one rated restaurant" do
+      expect(Restaurant.top_rated.count).to eq(0)
+
+      create_rated_restaurants(["res1"])
+
+      expect(Restaurant.top_rated.count).to eq(1)
+    end
+
+    it "returns all the restaurants when there are 3 restaurants" do
+      create_rated_restaurants(["res1", "res2", "res3"])
+
+      expect(Restaurant.top_rated.count).to eq(3)
+    end
+
+    it "returns the best rated 3 restaurants when there are many rated restaurants" do
+      create_rated_restaurants(["res1", "res2", "res3", "res4", "res5", "res6", "res7"])
+
+      rating = Rating.create points:4
+      extra_restaurant = Restaurant.create name:"Extra"
+      extra_restaurant.ratings << rating
+
+      expect(Restaurant.top_rated.count).to eq(3)
+      expect(Restaurant.top_rated.first.name).to eq('res5')
+      expect(Restaurant.top_rated.second.name).to eq('res4')
+      expect(Restaurant.top_rated.third.name).to eq("Extra")
+    end
+
+    it "returns only rated restaurants, not unrated ones" do
+      create_rated_restaurants(["res1", "res2"])
+
+      Restaurant.create name:"unrated1"
+      Restaurant.create name:"unrated"
+
+      expect(Restaurant.top_rated.count).to eq(2)
+    end
+
+    it "returns only restaurants, not other kind of places" do
+      create_rated_restaurants(["res1", "res2"])
+
+      rating = Rating.create points:4
+      place = Place.create name:"place"
+      place.ratings << rating
+
+      expect(Restaurant.top_rated.count).to eq(2)
+    end
+  end
+end
+
+def create_rated_restaurants(names)
+  i = 1
+  names.each do |name|
+    rating = Rating.create points:i
+    restaurant = Restaurant.create name:name
+    restaurant.ratings << rating
+
+    i += 1
+    i = 1 if i == 6
+  end
 end
