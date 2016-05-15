@@ -2,11 +2,17 @@
 
 <h1><%= t :Municipalities %></h1>
 
-<ul>
-  <% @municipalities.each do |municipality| %>
-    <li><%= link_to municipality.name, municipality %></li>
-  <% end %>
-</ul><br>
+<div ng-controller="MunicipalitiesController">
+
+  <%= t :Search %>: <input ng-model="query">
+
+  <ul class="list-group">
+    <li ng-repeat="municipality in municipalities | filter:query" class="list-group-item">
+      <a ng-href="{{municipality.url}}" class="btn btn-primary btn-sm">{{municipality.name}}</a>
+    </li>
+  </ul>
+
+</div>
 
 <% if can? :create, Municipality %>
     <%= link_to (t :'New_Municipality'), new_municipality_path, class:'btn btn-default' %>

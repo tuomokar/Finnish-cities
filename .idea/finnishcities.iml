@@ -41,6 +41,8 @@
     <orderEntry type="library" scope="PROVIDED" name="byebug (v8.2.4, rbenv: 2.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="cancancan (v1.13.1, rbenv: 2.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="capybara (v2.7.0, rbenv: 2.3.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="capybara-angular (v0.2.3, rbenv: 2.3.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="childprocess (v0.5.9, rbenv: 2.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="coffee-rails (v4.1.1, rbenv: 2.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="coffee-script (v2.4.1, rbenv: 2.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="coffee-script-source (v1.10.0, rbenv: 2.3.0) [gem]" level="application" />
@@ -55,6 +57,7 @@
     <orderEntry type="library" scope="PROVIDED" name="execjs (v2.6.0, rbenv: 2.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="factory_girl (v4.7.0, rbenv: 2.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="factory_girl_rails (v4.7.0, rbenv: 2.3.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="ffi (v1.9.10, rbenv: 2.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="globalid (v0.3.6, rbenv: 2.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="globalize (v5.0.1, rbenv: 2.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="i18n (v0.7.0, rbenv: 2.3.0) [gem]" level="application" />
@@ -90,9 +93,11 @@
     <orderEntry type="library" scope="PROVIDED" name="rspec-mocks (v3.4.1, rbenv: 2.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rspec-rails (v3.4.2, rbenv: 2.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rspec-support (v3.4.1, rbenv: 2.3.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rubyzip (v1.2.0, rbenv: 2.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sass (v3.4.22, rbenv: 2.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sass-rails (v5.0.4, rbenv: 2.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sdoc (v0.4.1, rbenv: 2.3.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="selenium-webdriver (v2.53.0, rbenv: 2.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="simplecov (v0.11.2, rbenv: 2.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="simplecov-html (v0.10.0, rbenv: 2.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="spring (v1.7.1, rbenv: 2.3.0) [gem]" level="application" />
@@ -109,6 +114,7 @@
     <orderEntry type="library" scope="PROVIDED" name="tzinfo (v1.2.2, rbenv: 2.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="uglifier (v3.0.0, rbenv: 2.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="web-console (v2.3.0, rbenv: 2.3.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="websocket (v1.2.3, rbenv: 2.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="xpath (v2.0.0, rbenv: 2.3.0) [gem]" level="application" />
   </component>
   <component name="RModuleSettingsStorage">
