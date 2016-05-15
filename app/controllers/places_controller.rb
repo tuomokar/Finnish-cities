@@ -17,7 +17,7 @@ class PlacesController < ApplicationController
   # GET /places/new
   def new
     @place = Restaurant.new
-    @place_types = {(t :Restaurant) => new_restaurant_path}
+    @place_types = {(t :Restaurant) => new_restaurant_path, (t :Brewery) => new_brewery_path}
   end
 
   # GET /places/1/edit

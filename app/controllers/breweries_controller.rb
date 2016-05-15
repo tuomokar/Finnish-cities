@@ -10,6 +10,7 @@ class BreweriesController < ApplicationController
   # GET /breweries/1
   # GET /breweries/1.json
   def show
+    @rating = Rating.new
   end
 
   # GET /breweries/new
@@ -69,6 +70,6 @@ class BreweriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def brewery_params
-      params.fetch(:brewery, {})
+      params.require(:brewery).permit(:name, :link)
     end
 end

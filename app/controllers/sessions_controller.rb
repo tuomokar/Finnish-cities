@@ -18,6 +18,4 @@ class SessionsController < ApplicationController
     redirect_to :root
   end
 
-  def create_oauth
-  end
 end

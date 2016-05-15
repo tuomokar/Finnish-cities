@@ -45,6 +45,7 @@ Tabulous.setup do
       active_when do
         in_action('any').of_controller('places')
         in_action('any').of_controller('restaurants')
+        in_action('any').of_controller('breweries')
       end
     end
 
