@@ -1,5 +1,6 @@
 class Municipality < ActiveRecord::Base
   translates :name, :link, :description,:fallbacks_for_empty_translations => true
+  has_one :location, as: :locationable
 
   belongs_to :region
   has_many :places

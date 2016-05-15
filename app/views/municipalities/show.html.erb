@@ -43,6 +43,32 @@
     </ul>
 <% end %>
 
+<style>
+  #map {
+    width: 500px;
+    height: 400px;
+  }
+</style>
+
+<% if @municipality.location %>
+    <div>
+      <div id="map"></div>
+      
+      <script>
+        function initMap() {
+          var mapDiv = document.getElementById('map');
+          var map = new google.maps.Map(mapDiv, {
+            center: {lat: <%= @municipality.location.latitude %>, lng: <%= @municipality.location.longitude %>},
+            zoom: 8
+          });
+        }
+      </script>
+
+      <script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
+              async defer></script>
+    </div>
+<% end %>
+
 <% if can? :create, Municipality %>
     <%= link_to (t :Edit), edit_municipality_path(@municipality), class:'btn btn-default' %>
     <%= link_to (t :Back), municipalities_path, class:'btn btn-default' %>
