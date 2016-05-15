@@ -1,52 +1,53 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong><%= t :Name %>:</strong>
-  <%= @municipality.name %>
-</p>
+<div class="col-md-5">
+  <h1><%= @municipality.name %></h1>
 
-<p>
-  <strong><%= t :Year %>:</strong>
-  <%= @municipality.year %>
-</p>
+  <p>
+    <strong><%= t :Year %>:</strong>
+    <%= @municipality.year %>
+  </p>
 
-<p>
-  <strong><%= t :Description %>:</strong>
-  <%= @municipality.description %>
-</p>
+  <p>
+    <strong><%= t :Description %>:</strong>
+    <%= @municipality.description %>
+  </p>
 
-<p>
-  <strong><%= t :Population %>:</strong>
-  <%= @municipality.population %>
-</p>
+  <p>
+    <strong><%= t :Population %>:</strong>
+    <%= @municipality.population %>
+  </p>
 
-<p>
-  <strong><%= t :Link %>:</strong>
-  <a href=<%= @municipality.link %>><%= @municipality.link %></a>
-</p>
+  <p>
+    <strong><%= t :Link %>:</strong>
+    <a href=<%= @municipality.link %>><%= @municipality.link %></a>
+  </p>
 
-<p>
-  <strong><%= t :Region %>:</strong>
-  <% if @municipality.region %>
-      <%= @municipality.region.name %>
-  <% end %>
-</p>
+  <p>
+    <strong><%= t :Region %>:</strong>
+    <% if @municipality.region %>
+        <%= @municipality.region.name %>
+    <% end %>
+  </p>
 
-<h3><%= t :Top_rated %>:</h3>
-<% if @municipality.top_rated.empty? %>
-  <p><%= t :Mun_no_ratings %></p>
-<% end %>
+  <div>
+    <h3><%= t :Top_rated %>:</h3>
+    <% if @municipality.top_rated.empty? %>
+        <p><%= t :Mun_no_ratings %></p>
+    <% end %>
 
-<% @municipality.top_rated.each do |pl| %>
-    <ul>
-      <li><%= link_to pl.name, pl.specific %></li>
-    </ul>
-<% end %>
+    <% @municipality.top_rated.each do |pl| %>
+        <ul>
+          <li><%= link_to pl.name, pl.specific %></li>
+        </ul>
+    <% end %>
+  </div>
+</div>
+
 
 
 <% if @municipality.location %>
 
-    <div>
+    <div class="col-md-6">
       <div id="map"></div>
 
       <script>
@@ -62,9 +63,4 @@
       <script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
               async defer></script>
     </div>
-<% end %>
-
-<% if can? :create, Municipality %>
-    <%= link_to (t :Edit), edit_municipality_path(@municipality), class:'btn btn-default' %>
-    <%= link_to (t :Back), municipalities_path, class:'btn btn-default' %>
 <% end %>
