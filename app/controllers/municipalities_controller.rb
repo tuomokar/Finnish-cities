@@ -21,6 +21,7 @@ class MunicipalitiesController < ApplicationController
 
   # GET /municipalities/1/edit
   def edit
+    @regions = Region.all
   end
 
   # POST /municipalities
