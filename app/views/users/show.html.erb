@@ -1,14 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong><%= t :username %>:</strong>
-  <%= @user.username %>
-</p>
+<h1><%= @user.username %></h1>
 
-<p>
-  <strong>Admin:</strong>
-  <%= @user.admin %>
-</p>
+<%= render 'form' %>
 
-<%= link_to (t :Edit), edit_user_path(@user), class:'btn btn-default' %>
 <%= link_to (t :Back), users_path, class:'btn btn-default' %>
