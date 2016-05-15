@@ -31,7 +31,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         session[:user_id] = @user.id
-        format.html { redirect_to @user, notice: 'User was successfully created, welcome!.' }
+        format.html { redirect_to @user, notice: (t :successful_user_creation) }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
@@ -43,12 +43,28 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
+    parameters = user_params_updating
+
+    if !(@user.authenticate parameters["current_password"])
+      @user.errors.add(:password, (t :no_match))
+    else
+      @user.password = parameters["password"]
+      @user.password_confirmation = parameters["password_confirmation"]
+    end
+
     respond_to do |format|
-      if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
-        format.json { render :show, status: :ok, location: @user }
+      unless @user.errors.any?
+        parameters.delete "current_password"
+
+        if @user.update(parameters)
+          format.html { redirect_to @user, notice: (t :successful_user_update) }
+          format.json { render :show, status: :ok, location: @user }
+        else
+          format.html { redirect_to :back, flash: { :errors => @user.errors.full_messages }  }
+          format.json { render json: @user.errors, status: :unprocessable_entity }
+        end
       else
-        format.html { render :edit }
+        format.html { redirect_to :back, flash: { :errors => @user.errors.full_messages }  }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
@@ -73,5 +89,9 @@ class UsersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:username, :password, :password_confirmation)
+    end
+
+    def user_params_updating
+      params.require(:user).permit(:current_password, :password, :password_confirmation)
     end
 end

@@ -29,3 +29,6 @@ fi:
         blank: ei saa olla tyhjä
   welcome: Tervetuloa!
   Ratings: Arvostelut
+  New_password_confirmation: Uuden salasanan varmistus
+  New_password: Uusi salasana
+  Current_password: Nykyinen salasana

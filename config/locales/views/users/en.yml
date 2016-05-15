@@ -6,3 +6,6 @@ en:
   Current_admins: Current admin users
   Contact: Feel free to contact our admins any time (sorry, no contact info at the moment, that will come later
   Register: Register
+  successful_user_update: User was successfully updated
+  successful_user_creation: User was successfully created, welcome!
+  no_match: doesn't match the old password

@@ -34,7 +34,7 @@ describe "Logging in functions" do
     click_button('log in')
 
     expect(page).to have_content("Welcome back!")
-    expect(page).to have_content("username: user1 ")
+    expect(page).to have_content("user1 ")
   end
 
   it "logged in user can log out" do

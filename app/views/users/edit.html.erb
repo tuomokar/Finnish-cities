@@ -1,6 +1,33 @@
 <h1><%= t :changing_user_information %></h1>
 
-<%= render 'form' %>
+<%= form_for(@user) do |f| %>
+    <% if flash[:errors] %>
+        <div id="error_explanation">
+          <h2> <%= t :found_errors, count: flash[:errors].count %> </h2>
+
+          <ul>
+            <% flash[:errors].each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+    <div class="field">
+      <%= f.label (t :Current_password) %><br>
+      <%= f.password_field :current_password %>
+    </div>
+    <div class="field">
+      <%= f.label (t :New_password) %><br>
+      <%= f.password_field :password %>
+    </div>
+    <div class="field">
+      <%= f.label (t :New_password_confirmation) %><br>
+      <%= f.password_field :password_confirmation %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>
 
 <%= link_to (t :Show), @user, class:'btn btn-default' %>
 <%= link_to (t :Back), users_path, class:'btn btn-default' %>

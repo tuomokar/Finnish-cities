@@ -8,3 +8,6 @@ fi:
   Current_admins: Tämänhetkiset admin-käyttäjät
   Contact: Otathan yhteyttä admineihin jos on tarvetta! (sori, ei yhteystietoja tällä hetkellä tarjolla - ne on tulossa myöhemmin)
   Register: Rekisteröidy
+  successful_user_update: Tietoja päivitettiin onnistuneesti
+  successful_user_creation: Käyttäjätilin luominen onnistui, tervetuloa sivustolle!
+  no_match: '^Antamasi salasana ei vastannut oikeaa salasanaasi'
