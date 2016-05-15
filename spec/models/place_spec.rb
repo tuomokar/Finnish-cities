@@ -121,6 +121,17 @@ RSpec.describe Place, type: :model do
 
       expect(Restaurant.top_rated.count).to eq(2)
     end
+
+    it "returns a rated restaurant only once" do
+      rating = Rating.create points:4
+      rating2 = Rating.create points:5
+
+      restaurant = Restaurant.create name:"restaurant"
+      restaurant.ratings << rating
+      restaurant.ratings << rating2
+
+      expect(Restaurant.top_rated.count).to eq(1)
+    end
   end
 
   describe "top breweries" do
@@ -131,7 +142,7 @@ RSpec.describe Place, type: :model do
       expect(empty_breweries).to be_empty
     end
 
-    it "returns only one restaurant when there is only one rated restaurant" do
+    it "returns only one brewery when there is only one rated brewery" do
       expect(Brewery.top_rated.count).to eq(0)
 
       create_rated_breweries(["brew1"])
@@ -139,13 +150,13 @@ RSpec.describe Place, type: :model do
       expect(Brewery.top_rated.count).to eq(1)
     end
 
-    it "returns all the restaurants when there are 3 restaurants" do
+    it "returns all the breweries when there are 3 breweries" do
       create_rated_breweries(["brew1", "brew2", "brew3"])
 
       expect(Brewery.top_rated.count).to eq(3)
     end
 
-    it "returns the best rated 3 restaurants when there are many rated restaurants" do
+    it "returns the best rated 3 breweries when there are many rated breweries" do
       create_rated_breweries(["brew1", "brew2", "brew3", "brew4", "brew5", "brew6", "brew7"])
 
       rating = Rating.create points:4
@@ -158,7 +169,7 @@ RSpec.describe Place, type: :model do
       expect(Brewery.top_rated.third.name).to eq("Extra")
     end
 
-    it "returns only rated restaurants, not unrated ones" do
+    it "returns only rated breweries, not unrated ones" do
       create_rated_breweries(["brew1", "brew2"])
 
       Brewery.create name:"unrated1"
@@ -167,7 +178,7 @@ RSpec.describe Place, type: :model do
       expect(Brewery.top_rated.count).to eq(2)
     end
 
-    it "returns only restaurants, not other kind of places" do
+    it "returns only breweries, not other kind of places" do
       create_rated_breweries(["brew1", "brew2"])
 
       rating = Rating.create points:4
@@ -179,6 +190,17 @@ RSpec.describe Place, type: :model do
       restaurant.ratings << rating
 
       expect(Brewery.top_rated.count).to eq(2)
+    end
+
+    it "returns a rated brewery only once" do
+      rating = Rating.create points:4
+      rating2 = Rating.create points:5
+
+      brewery = Brewery.create name:"brewery"
+      brewery.ratings << rating
+      brewery.ratings << rating2
+
+      expect(Brewery.top_rated.count).to eq(1)
     end
   end
 
