@@ -10,7 +10,7 @@
     <ul class="list-group">
 
       <li ng-repeat="place in places | filter:query" class="list-group-item">
-        <a ng-href="/{{place.base_path}}/{{place.specific.id}}" class="btn btn-primary btn-sm">{{place.specific.name}}</a>
+        <a ng-href="{{place.url}}" class="btn btn-primary btn-sm">{{place.specific.name}}</a>
       </li>
 
     </ul>
