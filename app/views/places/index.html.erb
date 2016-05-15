@@ -19,10 +19,20 @@
 
 <div class="col-md-6">
 
-  <h1><%= t :Restaurants %></h1>
+  <h1><%= t :Top_restaurants %></h1>
   <ul class="list-group"><br>
     <% @top_restaurants.each do |restaurant| %>
         <li class="list-group-item"><%= link_to restaurant.name, restaurant.specific, class:'btn btn-primary btn-sm' %></li>
+    <% end %>
+  </ul><br>
+</div>
+
+<div class="col-md-6">
+
+  <h1><%= t :Top_breweries %></h1>
+  <ul class="list-group"><br>
+    <% @top_breweries.each do |brewery| %>
+        <li class="list-group-item"><%= link_to brewery.name, brewery.specific, class:'btn btn-primary btn-sm' %></li>
     <% end %>
   </ul><br>
 </div>

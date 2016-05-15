@@ -7,6 +7,7 @@ class PlacesController < ApplicationController
   def index
     @places = Place.all
     @top_restaurants = Restaurant.top_rated
+    @top_breweries = Brewery.top_rated
   end
 
   # GET /places/1
