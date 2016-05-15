@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160515125808) do
+ActiveRecord::Schema.define(version: 20160515173946) do
+
+  create_table "breweries", force: :cascade do |t|
+  end
 
   create_table "locations", force: :cascade do |t|
     t.float   "latitude"
