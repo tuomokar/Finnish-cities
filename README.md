@@ -11,7 +11,7 @@ in the University of Helsinki in Spring 2016.
 - [Heroku](http://seefinland.herokuapp.com/)
 
 ## Local use instructions
-The app uses version 4.2.6 from Rails, and 2.3.0 from Ruby. If you want to download the project locally, any version from Rails 4 onwards probably works, and Ruby version from 2 onwards (or at least 2.2). Once you have compatible versions of those and the project donwloaded, go to the app's location in terminal/cmd, install the gems `bundle install`, run migrations `rake db:migrate` and type `rails s` to fire up the local server. You can find the app from `http://localhost:3000` address on your browser.
+The app uses version 4.2.6 from Rails, and 2.3.0 from Ruby. If you want to download the project locally, any version from Rails 4 onwards probably works, and Ruby version from 2 onwards (or at least 2.2). Once you have compatible versions of those and the project donwloaded, go to the app's location on Bash, install the gems `bundle install`, run migrations `rake db:migrate` and type `rails s` to fire up the local server. You can find the app from `http://localhost:3000` address on your browser.
 
 ## Gems (outside the default gems included with Rails) used in the project:
 - [Globalize](https://github.com/globalize/globalize): translates model attributes
